@@ -73,6 +73,43 @@ namespace HW_modul_03_Bukov
         6 88 7 — массив для фильтрации;
         1 2 -1 — результат работы метода.*/
 
+        static int[] FilterArray(int[] array, int[] filter)
+        {
+            int[] newArr = new int[array.Length];
+            int count = 0; // Счетчик для нового массива
+
+            // Перебираю элементы исходного массива
+            for (int i = 0; i < array.Length; i++)
+            {
+                bool found = false; // Переменная для проверки наличия элемента в массиве-фильтре
+
+                // содержится ли текущий элемент в массиве-фильтре
+                for (int j = 0; j < filter.Length; j++)
+                {
+                    if (array[i] == filter[j])
+                    {
+                        found = true;
+                        break;
+                    }
+                }
+
+                // добавляю в новый массив, если элемент не найден в массиве-фильтре
+                if (!found)
+                {
+                    newArr[count++] = array[i];
+                }
+            }
+
+            // новый массив, содержащий только элементы, прошедшие фильтрацию
+            int[] result = new int[count];
+            for (int i = 0; i < count; i++)
+            {
+                result[i] = newArr[i];
+            }
+
+            return result;
+        }
+
         static void Main(string[] args)
         {
             //Задание 1
@@ -83,13 +120,29 @@ namespace HW_modul_03_Bukov
 
             // задание 2
             int num = 1221;
-            Console.WriteLine(IsPalindrome(num));
+            //Console.WriteLine(IsPalindrome(num));
             int num1 = 1512;
-            Console.WriteLine(IsPalindrome(num1));
+            //Console.WriteLine(IsPalindrome(num1));
+
+            //Задание 3.
+            int[] array = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 0 };
+            int[] filter = { 4, 5, 6, 7 };
+
+            // Вызываем метод FilterArray и сохраняем результат в новом массиве
+            int[] result = FilterArray(array, filter);
+
+            // Выводим результат на экран
+            Console.WriteLine("Массив после фильтрации:");
+            foreach (int i in result)
+            {
+                Console.Write(i + " ");
+            }
+            Console.WriteLine();
         }
+    }
         
 
 
     }
 
-}
+
