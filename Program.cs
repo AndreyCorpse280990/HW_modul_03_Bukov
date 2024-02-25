@@ -38,6 +38,7 @@ namespace HW_modul_03_Bukov
             {
                 Console.Write(sym);
             }
+            Console.WriteLine();
         }
 
         /* Задание 2
@@ -119,19 +120,18 @@ namespace HW_modul_03_Bukov
             //Square(symbol, length);
 
             // задание 2
-            int num = 1221;
-            //Console.WriteLine(IsPalindrome(num));
-            int num1 = 1512;
-            //Console.WriteLine(IsPalindrome(num1));
+            /*int num = 1221;
+            Console.WriteLine(IsPalindrome(num));
+            int num1 = 1512;ы
+            Console.WriteLine(IsPalindrome(num1));*/
 
             //Задание 3.
             int[] array = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 0 };
             int[] filter = { 4, 5, 6, 7 };
 
-            // Вызываем метод FilterArray и сохраняем результат в новом массиве
+            // сохранение результата функции в новом массиве
             int[] result = FilterArray(array, filter);
 
-            // Выводим результат на экран
             Console.WriteLine("Массив после фильтрации:");
             foreach (int i in result)
             {
